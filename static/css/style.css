@@ -1,0 +1,39 @@
+@font-face {
+    font-family: BalsamiqSans;
+    src: url("../fonts/BalsamiqSans-Regular.ttf");
+}
+
+body,
+form {
+    font-family: BalsamiqSans;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    gap: 15px
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table th,
+table td {
+    border: 1px solid black;
+    padding: 25px;
+}
+
+#submit-task {
+    gap: 5px;
+    margin: 15px;
+}
+
+#encouragement-box {
+    padding: 10px;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 5px;
+}

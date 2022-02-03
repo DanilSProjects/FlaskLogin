@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h1>Welcome, {{username}}.</h1>
+<h1>Your Tasks</h1>
+{% if tasks|length > 0 %}
+<table>
+    <tr>
+        <th>
+            Task
+        </th>
+        <th>
+            Added
+        </th>
+        <th>
+            Actions
+        </th>
+    </tr>
+    {% for task in tasks %}
+    <tr>
+        <th>
+            {{ task.get("content") }}
+        </th>
+        <th>
+            {{ task.get("date-added") }}
+        </th>
+        <th>
+            <a href="/update/{{username}}/{{task_ids[tasks.index(task)]}}">Update</a>
+            <a href="/delete/{{username}}/{{task_ids[tasks.index(task)]}}">Delete</a>
+        </th>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<div id="encouragement-box">
+    <h2>No tasks yet!</h2>
+<p>Enter a task in the box below and start your journey to productivity!</p>
+</div>
+{% endif %}
+<form id="submit-task" action="/submit-task/{{username}}" method="POST">
+    <input type="text" name="task-content" id="task-content">
+    <input type="submit" value="Add Task">
+</form>
+{% endblock %}

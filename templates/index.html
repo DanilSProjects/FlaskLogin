@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h1>FlaskLogin</h1>
+<form action="/submit" method="POST">
+    <div id="login-username">
+        <label for="username">Username:</label>
+        <input type="text" name="username" required>
+    </div>
+    <div id="login-password">
+        <label for="password">Password:</label>
+        <input type="password" name="password" required>
+    </div>
+    <input type="submit">
+</form>
+<p>Don't have an account? <a href="/register">Register here!</a></p>
+{% endblock %}
